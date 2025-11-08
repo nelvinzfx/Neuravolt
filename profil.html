@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang NeuraVolt Elektronik</title>
+  <meta name="description" content="Profil NeuraVolt Elektronik: kurator perangkat kerja, audio, dan smart home dengan layanan teknisi internal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="relative min-h-screen overflow-x-hidden bg-darkspace text-slate-100">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-[radial-gradient(circle_at_top_right,_rgba(94,234,212,0.35),_transparent_70%)] blur-3xl"></div>
+  <div class="pointer-events-none absolute bottom-0 left-[-10rem] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,_rgba(108,76,255,0.3),_transparent_65%)] blur-2xl"></div>
+
+  <header class="relative z-50">
+    <nav x-data="{ open: false }" class="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[rgba(6,7,32,0.78)] backdrop-blur-2xl shadow-[0_18px_45px_rgba(6,10,32,0.48)]">
+      <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 md:px-6">
+        <a href="index.html" class="flex items-center space-x-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-aurora1 via-aurora2 to-aurora3 text-lg font-semibold tracking-tight text-darkspace shadow-glow">NV</span>
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-200">NeuraVolt</p>
+            <p class="text-base font-semibold text-slate-100">Elektronik</p>
+          </div>
+        </a>
+        <div class="hidden items-center space-x-8 text-sm font-medium text-slate-200 md:flex">
+          <a href="index.html" class="transition hover:text-aurora1">Beranda</a>
+          <a href="profil.html" class="text-aurora1">Profil</a>
+          <a href="index.html#layanan" class="transition hover:text-aurora1">Kategori</a>
+          <a href="index.html#galeri" class="transition hover:text-aurora1">Galeri</a>
+          <a href="index.html#katalog" class="transition hover:text-aurora1">Katalog</a>
+          <a href="index.html#simulasi" class="transition hover:text-aurora1">Bundel</a>
+          <a href="index.html#berita" class="transition hover:text-aurora1">Berita</a>
+          <a href="index.html#hubungi" class="transition hover:text-aurora1">Kontak</a>
+        </div>
+        <div class="flex items-center space-x-3">
+          <a href="index.html#hubungi" class="hidden rounded-full bg-gradient-to-r from-aurora1 via-aurora2 to-aurora3 px-6 py-2 text-sm font-semibold text-darkspace shadow-lg shadow-purple-900/50 md:inline-flex md:items-center">Chat Engineer</a>
+          <button type="button" class="relative inline-flex items-center justify-center rounded-full border border-white/10 p-2 text-slate-200 transition hover:bg-white/10 md:hidden" @click="open = !open" :aria-expanded="open.toString()">
+            <span class="sr-only">Toggle menu</span>
+            <template x-if="!open">
+              <svg x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h12" />
+              </svg>
+            </template>
+            <template x-if="open">
+              <svg x-cloak xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 6l12 12M6 18 18 6" />
+              </svg>
+            </template>
+          </button>
+        </div>
+      </div>
+      <div x-cloak x-show="open" x-transition.origin-top class="absolute inset-x-0 top-full z-40 md:hidden">
+        <div class="mx-auto w-full max-w-6xl border-t border-white/10 bg-[rgba(6,7,32,0.72)] px-6 py-6 backdrop-blur-2xl">
+          <div class="flex flex-col space-y-4 text-sm font-medium text-slate-200">
+            <a href="index.html" class="transition hover:text-aurora1" @click="open = false">Beranda</a>
+            <a href="profil.html" class="text-aurora1" @click="open = false">Profil</a>
+            <a href="index.html#layanan" class="transition hover:text-aurora1" @click="open = false">Kategori</a>
+            <a href="index.html#galeri" class="transition hover:text-aurora1" @click="open = false">Galeri</a>
+            <a href="index.html#katalog" class="transition hover:text-aurora1" @click="open = false">Katalog</a>
+            <a href="index.html#simulasi" class="transition hover:text-aurora1" @click="open = false">Bundel</a>
+            <a href="index.html#berita" class="transition hover:text-aurora1" @click="open = false">Berita</a>
+            <a href="index.html#hubungi" class="transition hover:text-aurora1" @click="open = false">Kontak</a>
+            <a href="index.html#hubungi" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-aurora1 via-aurora2 to-aurora3 px-6 py-3 text-sm font-semibold text-darkspace">Chat Engineer</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mx-auto max-w-4xl px-6 pt-32 text-center md:pt-36">
+      <span class="inline-flex items-center space-x-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-aurora2/80">Identitas Brand</span>
+      <h1 class="mt-6 text-4xl font-semibold leading-tight text-slate-100 sm:text-5xl">Profil NeuraVolt: Kurator Perangkat &amp; Smart Living</h1>
+      <p class="mt-4 text-base text-slate-200 sm:text-lg">Kami merancang rantai pasok tertutup untuk laptop kerja, audio profesional, dan modul smart home—mulai dari pengadaan resmi hingga instalasi onsite dan dukungan purna jual.</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-left text-xs text-slate-200 sm:text-sm">
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+          <p class="text-slate-100">Warehouse + Lab</p>
+          <p>Kontrol suhu &amp; lab firmware internal.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+          <p class="text-slate-100">Studio Experience</p>
+          <p>Demo hybrid BSD &amp; Kemang.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+          <p class="text-slate-100">SLA Layanan</p>
+          <p>Chat engineer &amp; onsite max 24 jam.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 mt-24 flex-1 space-y-14">
+    <section class="mx-auto max-w-6xl px-6">
+      <div class="rounded-[3rem] border border-white/5 bg-white/5 p-1 backdrop-blur-2xl">
+        <div class="rounded-[2.8rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 p-10">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Profil Singkat</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white">Blueprint Operasional NeuraVolt Elektronik</h2>
+              <p class="mt-4 text-sm text-slate-200">
+                NeuraVolt menggabungkan warehouse bersuhu terkontrol, lab firmware, dan studio pengalaman untuk
+                memastikan setiap perangkat tiba dengan konfigurasi yang sama seperti hasil demo. Tim kami
+                mengelola siklus penuh: kurasi vendor, stress test, imaging OS, hingga asistensi instalasi onsite.
+              </p>
+              <ul class="mt-6 space-y-4 text-sm text-slate-200">
+                <li>• Rantai pasok tertutup dengan audit nomor seri dan histori servis untuk seluruh stok aktif.</li>
+                <li>• Studio Experience di BSD & Kemang menghadirkan demo hybrid untuk laptop, audio, dan IoT.</li>
+                <li>• Engineer internal menangani instalasi, integrasi smart home, dan dukungan SLA korporat.</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-inner shadow-black/30">
+              <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Fakta Operasional 2024</p>
+              <div class="mt-6 space-y-6">
+                <div>
+                  <p class="text-3xl font-semibold text-white"><span id="counter-inventory">0</span> Unit</p>
+                  <p class="mt-2 text-sm text-slate-200">Perangkat lulus QC lengkap (burn-in, kalibrasi, imaging) per tahun.</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-semibold text-white"><span id="counter-engineers">0</span> Engineer</p>
+                  <p class="mt-2 text-sm text-slate-200">Teknisi sertifikasi vendor + analis supply yang bertugas penuh waktu.</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-semibold text-white"><span id="counter-cities">0</span> Kota</p>
+                  <p class="mt-2 text-sm text-slate-200">Coverage instalasi onsite & pickup hub (Jabodetabek, Bandung, Surabaya, Bali, Medan).</p>
+                </div>
+                <div>
+                  <p class="text-3xl font-semibold text-white">2 Hub</p>
+                  <p class="mt-2 text-sm text-slate-200">Pusat operasional BSD (warehouse + lab) & Kemang (studio experience).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6">
+      <div class="mb-10 text-center">
+        <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">DNA Layanan</p>
+        <h2 class="mt-4 text-3xl font-semibold text-slate-100">Cara Kami Menjaga Konsistensi Perangkat</h2>
+        <p class="mt-3 text-sm text-slate-200">Setiap pesanan melewati tiga lapisan kendali mutu berikut.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-inner shadow-black/30">
+          <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Kurasi Teknis</p>
+          <h3 class="mt-3 text-xl font-semibold text-white">Vendor + Firmware</h3>
+          <p class="mt-3 text-sm text-slate-200">Kemitraan langsung dengan brand resmi dan distributor komponen. Batch stok diuji firmware, suhu, dan konsumsi daya sebelum disetujui masuk etalase.</p>
+        </article>
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-inner shadow-black/30">
+          <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Servis Terukur</p>
+          <h3 class="mt-3 text-xl font-semibold text-white">Lab & Imaging</h3>
+          <p class="mt-3 text-sm text-slate-200">Lab internal menjalankan burn-in 12 jam, kalibrasi warna/audio, dan instalasi OS + perangkat lunak sesuai paket. Laporan QC otomatis dikirim ke pelanggan.</p>
+        </article>
+        <article class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-inner shadow-black/30">
+          <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Ekosistem Pelanggan</p>
+          <h3 class="mt-3 text-xl font-semibold text-white">Support Lifeline</h3>
+          <p class="mt-3 text-sm text-slate-200">Channel chat engineer, kunjungan onsite, serta knowledge base untuk tim IT klien menjaga SLA 4 jam di Jabodetabek dan 24 jam di luar kota.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-[2.8rem] border border-white/10 bg-white/5 p-8 shadow-inner shadow-black/30">
+          <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Blueprint Fasilitas</p>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Mulai dari Pengadaan hingga Demo</h3>
+          <ul class="mt-6 space-y-5 text-sm text-slate-200">
+            <li>
+              <span class="font-semibold text-slate-100">Procurement Lab</span> – inspeksi fisik, validasi garansi, dan tagging nomor seri dilakukan dalam ruang bersuhu 20°C dengan sensor kelembapan real-time.
+            </li>
+            <li>
+              <span class="font-semibold text-slate-100">Integration Bench</span> – workstation imaging menyalin template OS, profil keamanan, serta automasi smart home yang diminta klien.
+            </li>
+            <li>
+              <span class="font-semibold text-slate-100">Experience Lounge</span> – area demo untuk mencoba monitor warna, sistem audio, atau skenario IoT secara hybrid (onsite + video call).
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-[2.8rem] border border-white/10 bg-gradient-to-br from-[#13203F]/70 via-[#1F335F]/60 to-[#050A1E]/90 p-8 shadow-glow">
+          <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Jalur Layanan</p>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Pendampingan Pesanan Perangkat</h3>
+          <div class="mt-6 space-y-5 text-sm text-slate-200">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-aurora1">Discovery</p>
+              <p class="mt-2 text-slate-200">Workshop kebutuhan kerja, perencanaan daya, serta requirement keamanan dilakukan sebelum proposal dikirim.</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-aurora1">Deployment</p>
+              <p class="mt-2 text-slate-200">Teknisi onsite membawa paket yang sudah diimaging, melakukan instalasi kabel rapi, serta training aktivasi.</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-aurora1">Support Loop</p>
+              <p class="mt-2 text-slate-200">Monitoring garansi, update firmware berkala, dan opsi swap unit DOA < 24 jam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
+        <div class="rounded-[3rem] border border-white/5 bg-white/5 p-10">
+          <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Tonggak & Dampak</p>
+          <h3 class="mt-4 text-2xl font-semibold text-white">Evolusi NeuraVolt</h3>
+          <ul class="mt-6 space-y-5 text-sm text-slate-200">
+            <li>
+              <p class="font-semibold text-slate-100">2017 · Servis Independen</p>
+              <p>Mendampingi komunitas kreator untuk upgrade storage & tuning performa laptop.</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-100">2019 · Warehouse Terintegrasi</p>
+              <p>Membangun gudang bersuhu terkontrol dengan sistem inventory real-time.</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-100">2021 · Studio Smart Living</p>
+              <p>Memperkenalkan demo IoT & audio immersive untuk korporasi dan retail.</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-100">2023 · Platform Order Digital</p>
+              <p>Katalog online + konfigurator bundel menghadirkan transparansi harga dan timeline.</p>
+            </li>
+            <li>
+              <p class="font-semibold text-slate-100">2024 · Ekspansi Nasional</p>
+              <p>Menambah jaringan teknisi partner di 8 kota serta memperkuat integrasi logistik berasuransi.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-7 shadow-inner shadow-black/30">
+            <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Jejak Dampak</p>
+            <ul class="mt-4 space-y-3 text-sm text-slate-200">
+              <li><span class="text-slate-100">5,2x</span> perputaran stok per kuartal dengan sistem forecasting internal.</li>
+              <li><span class="text-slate-100">40+ kampanye</span> smart office & retail yang dikawal sejak desain sampai training.</li>
+              <li><span class="text-slate-100">96% NPS</span> untuk layanan purna jual (survei H2 2024).</li>
+            </ul>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-7 shadow-inner shadow-black/30">
+            <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Ekosistem</p>
+            <p class="mt-3 text-sm text-slate-200">Didukung integrasi Apple, Google, Samsung, Tuya, Matter, dan Zigbee untuk smart home; serta Windows Autopilot + JAMF untuk deployment korporat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="rounded-[3rem] border border-white/10 bg-white/5 p-8 shadow-inner shadow-black/30">
+          <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Tim Inti</p>
+          <ul class="mt-6 space-y-5 text-sm text-slate-200">
+            <li>
+              <p class="text-slate-100">Nara Wirawan · CEO & Head of Engineering</p>
+              <p>Merancang standar QC, supervisi tim instalasi, dan menjaga roadmap teknologi.</p>
+            </li>
+            <li>
+              <p class="text-slate-100">Devin Pratama · Director of Product & Supply</p>
+              <p>Mengelola kurasi brand partner, pengadaan komponen, serta dokumentasi spesifikasi.</p>
+            </li>
+            <li>
+              <p class="text-slate-100">Saskia Mandala · Director of Experience</p>
+              <p>Memimpin customer care, training engineer, dan SLA layanan onsite.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-[3rem] border border-white/10 bg-white/5 p-8 shadow-inner shadow-black/30">
+          <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Tata Kelola & Kepatuhan</p>
+          <ul class="mt-6 space-y-4 text-sm text-slate-200">
+            <li>• Proses QC mengikuti checklist internal berbasis standar ISO/IEC 17025 untuk pengujian alat elektronik.</li>
+            <li>• Seluruh instalasi onsite tercatat dalam sistem tiket dengan log foto, parameter listrik, dan tanda tangan digital klien.</li>
+            <li>• Program warranty exchange 24 jam untuk DOA serta pengelolaan e-waste bekerjasama dengan mitra daur ulang tersertifikasi.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 pb-6">
+      <div class="rounded-[3rem] border border-white/5 bg-gradient-to-r from-[#030712]/95 via-[#0E1B3F]/85 to-[#050A1E]/95 p-[1px]">
+        <div class="rounded-[2.9rem] bg-gradient-to-r from-[#14233F]/90 via-[#1F3F63]/85 to-[#050A1E]/95 p-10">
+          <div class="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p class="text-sm uppercase tracking-[0.3em] text-aurora2/70">Program Kolaborasi</p>
+              <h3 class="mt-4 text-3xl font-semibold text-white">Buka Gudang Pintar Anda Bersama NeuraVolt</h3>
+              <p class="mt-4 text-sm text-slate-200">Kami menyiapkan paket proyek untuk kantor, studio kreatif, dan retail yang memerlukan kombinasi perangkat kerja + smart living.</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-200">
+                <li>• Price list proyek & simulasi bundel custom.</li>
+                <li>• Penjadwalan instalasi massal beserta survey lokasi.</li>
+                <li>• Dukungan SLA & jalur eskalasi engineer khusus.</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-inner shadow-black/30">
+              <p class="text-xs uppercase tracking-[0.3em] text-aurora2/70">Hubungi Kami</p>
+              <p class="mt-3 text-sm text-slate-200">Kirim kebutuhan perangkat dan timeline proyek ke tim partnership.</p>
+              <a href="mailto:partnership@neuravolt.id" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-aurora1 via-aurora2 to-aurora3 px-6 py-3 text-sm font-semibold text-darkspace shadow-glow transition hover:scale-105">partnership@neuravolt.id</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 mt-12 border-t border-white/5 bg-darkspace/90">
+    <div class="mx-auto w-full max-w-6xl px-6 py-12">
+      <div class="grid gap-10 text-sm text-slate-200 md:grid-cols-3">
+        <div>
+          <div class="flex items-center space-x-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-aurora1 via-aurora2 to-aurora3 text-lg font-semibold tracking-tight text-darkspace shadow-glow">NV</span>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-200">NeuraVolt</p>
+              <p class="text-base font-semibold text-slate-100">Elektronik</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-slate-200">NeuraVolt adalah toko elektronik kurasi dengan teknisi internal yang siap membantu instalasi perangkat kerja, audio, dan smart home.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="https://instagram.com/neuravolt.id" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-aurora1/60 hover:text-aurora1" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+                <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7zm5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5zm5.25-3.75a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/neuravolt" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-aurora1/60 hover:text-aurora1" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+                <path d="M6.94 7.5H4.06A.56.56 0 0 1 3.5 6.94V4.06A.56.56 0 0 1 4.06 3.5h2.88a.56.56 0 0 1 .56.56v2.88a.56.56 0 0 1-.56.56zM5.5 9.06h.01A2.5 2.5 0 1 1 5.5 14a2.5 2.5 0 0 1 0-4.94zM9 9.5h2.4v1h.03a2.63 2.63 0 0 1 2.37-1.3c2.54 0 3.2 1.67 3.2 3.84v4.46H14.6v-3.95c0-.94-.02-2.15-1.31-2.15s-1.52 1.02-1.52 2.07v4.03H9Z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@neuravolt" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-aurora1/60 hover:text-aurora1" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+                <path d="M21.6 7.2a2.4 2.4 0 0 0-1.68-1.7C18.4 5 12 5 12 5s-6.4 0-7.92.5A2.4 2.4 0 0 0 2.4 7.2 25.36 25.36 0 0 0 2 12a25.36 25.36 0 0 0 .4 4.8 2.4 2.4 0 0 0 1.68 1.7C5.6 19 12 19 12 19s6.4 0 7.92-.5a2.4 2.4 0 0 0 1.68-1.7A25.36 25.36 0 0 0 22 12a25.36 25.36 0 0 0-.4-4.8zM10 15.5v-7l6 3.5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-200">Navigasi</p>
+          <ul class="mt-4 space-y-2 text-xs">
+            <li><a href="index.html#layanan" class="transition hover:text-aurora1">Kategori</a></li>
+            <li><a href="index.html#proses" class="transition hover:text-aurora1">Pengalaman Belanja</a></li>
+            <li><a href="index.html#katalog" class="transition hover:text-aurora1">Katalog</a></li>
+            <li><a href="index.html#berita" class="transition hover:text-aurora1">Berita &amp; Promo</a></li>
+            <li><a href="profil.html" class="text-aurora1">Tentang Kami</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-200">Kontak</p>
+          <ul class="mt-4 space-y-2 text-xs">
+            <li><span class="text-slate-200">Email:</span> <a href="mailto:support@neuravolt.id" class="transition hover:text-aurora1">support@neuravolt.id</a></li>
+            <li><span class="text-slate-200">WhatsApp:</span> <a href="https://wa.me/628119000808" class="transition hover:text-aurora1">+62 811-9000-808</a></li>
+            <li><span class="text-slate-200">Alamat:</span> Jl. Tegangan No. 18, Jakarta Selatan</li>
+            <li><span class="text-slate-200">Jam Operasional:</span> Senin–Sabtu, 10.00–21.00 WIB</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-200 sm:flex-row">
+        <p>&copy; 2024 NeuraVolt Elektronik. Semua hak dilindungi.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="transition hover:text-aurora1">Kebijakan Privasi</a>
+          <a href="#" class="transition hover:text-aurora1">Syarat Layanan</a>
+          <a href="index.html#hubungi" class="transition hover:text-aurora1">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script>
+    // Counter Animation khusus halaman profil
+    setTimeout(function() {
+      function animateValue(id, start, end, duration, suffix) {
+        const obj = document.getElementById(id);
+        if (!obj || start === end) return;
+
+        const range = end - start;
+        let current = start;
+        const increment = end > start ? 1 : -1;
+        const stepTime = Math.max(10, Math.abs(Math.floor(duration / range)));
+
+        const timer = setInterval(function() {
+          current += increment;
+
+          let displayValue = current;
+          if (Math.abs(current) >= 1000) {
+            displayValue = current.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+          }
+
+          obj.textContent = displayValue + (suffix || '');
+
+          if (current === end) {
+            clearInterval(timer);
+          }
+        }, stepTime);
+      }
+
+      animateValue('counter-inventory', 0, 4800, 2200, '+');
+      animateValue('counter-engineers', 0, 36, 1800, '');
+      animateValue('counter-cities', 0, 8, 1500, '');
+    }, 600);
+  </script>
+</body>
+</html>
