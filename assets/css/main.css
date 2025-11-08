@@ -1,0 +1,233 @@
+html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #030712;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    [x-cloak] {
+      display: none !important;
+    }
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.05;
+      mix-blend-mode: screen;
+      z-index: 1;
+    }
+    .orb-floating {
+      animation: float 12s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-20px) scale(1.05);
+      }
+      100% {
+        transform: translateY(10px) scale(0.98);
+      }
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    [data-animate].animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body.preloading {
+      overflow: hidden;
+    }
+
+    #preloader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 20%, rgba(94, 234, 212, 0.22), transparent 55%), radial-gradient(circle at 80% 30%, rgba(76, 159, 255, 0.24), transparent 60%), #050914;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #preloader .loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    #preloader .loader-visual {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #preloader .bolt-wrapper {
+      position: relative;
+      width: 90px;
+      height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: breathing 2.5s ease-in-out infinite;
+    }
+
+    #preloader .bolt-core {
+      position: relative;
+      width: 74px;
+      height: 102px;
+      clip-path: polygon(18% 0%, 100% 0%, 63% 43%, 96% 43%, 30% 100%, 44% 58%, 0% 58%);
+      background: linear-gradient(180deg, #fdfcff 0%, #5eead4 35%, #4c9fff 65%, #1b2a52 100%);
+      background-size: 100% 220%;
+      animation: currentFlow 1.9s ease-in-out infinite alternate;
+      box-shadow: 0 18px 38px rgba(94, 234, 212, 0.45), 0 0 22px rgba(76, 159, 255, 0.35);
+    }
+
+    #preloader .bolt-core::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      clip-path: inherit;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.6;
+      animation: breathing 2.6s ease-in-out infinite;
+    }
+
+    #preloader .bolt-glow {
+      position: absolute;
+      inset: -10px;
+      border-radius: 40px;
+      background: radial-gradient(circle, rgba(94, 234, 212, 0.32), transparent 65%);
+      filter: blur(12px);
+    }
+
+    #preloader .loader-glow {
+      width: 140px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(94, 234, 212, 0.15), rgba(94, 234, 212, 0.8), rgba(76, 159, 255, 0.85), rgba(108, 76, 255, 0.3));
+      background-size: 200% 100%;
+      animation: shimmer 2s linear infinite;
+    }
+
+    #preloader .loader-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      text-align: center;
+    }
+
+    #preloader .loader-brand .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.92);
+    }
+
+    #preloader .loader-brand .name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #f8faff;
+    }
+
+    #preloader .loader-text {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: rgba(241, 245, 249, 0.8);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes currentFlow {
+      0% {
+        background-position: 0% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    @keyframes breathing {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+
+
+    /* Smooth Transition for Testimonial Carousel */
+    .testimonial-carousel-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .testimonial-carousel-track {
+      display: flex;
+      transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .testimonial-carousel-track.dragging {
+      transition: none;
+    }
+
+    .testimonial-card {
+      min-width: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+
+    .hero-gradient {
+      display: inline-block;
+      background-image: linear-gradient(to right, #5EEAD4, #4C9FFF, #6C4CFF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
