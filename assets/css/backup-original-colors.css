@@ -1,0 +1,71 @@
+/**
+ * BACKUP ORIGINAL COLOR PALETTE
+ * Digitalisasi UMKM Hub - Cosmic Theme
+ * Backup created: 2025-10-14
+ *
+ * Original Tailwind Config Colors:
+ */
+
+:root {
+  /* Aurora Colors (Original Cosmic Theme) */
+  --aurora1: #F897FE;    /* Pink */
+  --aurora2: #93A5F0;    /* Lavender */
+  --aurora3: #483ACC;    /* Purple */
+  --aurora4: #172090;    /* Deep Blue */
+  --aurora5: #03042C;    /* Dark Navy */
+  --darkspace: #060720;  /* Background */
+}
+
+/**
+ * Tailwind Config (Original):
+ *
+ * tailwind.config = {
+ *   theme: {
+ *     extend: {
+ *       colors: {
+ *         aurora1: '#F897FE',
+ *         aurora2: '#93A5F0',
+ *         aurora3: '#483ACC',
+ *         aurora4: '#172090',
+ *         aurora5: '#03042C',
+ *         darkspace: '#060720',
+ *       },
+ *       boxShadow: {
+ *         glow: '0 25px 80px rgba(72, 58, 204, 0.35)',
+ *       },
+ *     },
+ *   },
+ * };
+ */
+
+/**
+ * Gradient Combinations (Original):
+ *
+ * Primary Gradient:
+ * - from-[#F897FE] via-[#93A5F0] to-[#483ACC]
+ * - from-aurora1 via-aurora2 to-aurora3
+ *
+ * Space Gradient:
+ * - from-[#0A1051] via-[#172090] to-[#03042C]
+ *
+ * Planet Cerah:
+ * - from-[#FFE58B] via-[#DA7890] to-[#6C32F2]
+ *
+ * Planet Tenang:
+ * - from-[#EB83D0] via-[#3F5BC5] to-[#1A37FD]
+ *
+ * Glow Effects:
+ * - shadow-purple-900/60
+ * - shadow-glow (purple)
+ * - bg-[radial-gradient(circle,_rgba(248,151,254,0.35),_transparent_70%)]
+ */
+
+/**
+ * RESTORE INSTRUCTIONS:
+ *
+ * To restore original colors:
+ * 1. Copy the Tailwind config above back to <script> section
+ * 2. Replace all gradient classes with original combinations
+ * 3. Update glow shadow colors to purple variants
+ * 4. Change background radial gradients to pink/purple
+ */
